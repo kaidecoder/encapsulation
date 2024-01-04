@@ -68,7 +68,7 @@ class Student {
     }
 
     #getInfo(){
-        return `${this.getName()} was born in the year ${this.getDob()} and is now ${this.getAge()}.`
+        return `${this.getName()} was born in the year ${this.getDob()} and is now ${this.getAge()} years old.`
     }
 
     getPrivateInfo(){
