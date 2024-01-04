@@ -67,8 +67,12 @@ class Student {
         return new Date().getFullYear() - this.#dob
     }
 
-    getInfo(){
-        return `${this.getName} was born in the year ${this.getDob} and is now ${this.getAge}.`
+    #getInfo(){
+        return `${this.getName()} was born in the year ${this.getDob()} and is now ${this.getAge()}.`
+    }
+
+    getPrivateInfo(){
+        return this.#getInfo()
     }
 }
 
@@ -76,4 +80,4 @@ const student3 = new Student("Pearline Molly Elizabeth Prentice", 1926)
 console.log(student3.getDob())
 console.log(student3.getName())
 console.log(student3.getAge())
-console.log(student3.getInfo())
+console.log(student3.getPrivateInfo())
