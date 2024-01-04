@@ -115,15 +115,17 @@ class Teacher extends Person{
     #getSalary(){
         return "get salary"
     }
-    // getName(){
-    //     return `Welcome ${this.getName()}`
-    // }
+    getNewName(){
+        return `Welcome ${this.getName()}`
+    }
 }
 
-let teacher1 = new Teacher("Teacher", 21, "26 Nonya Lane", 1256)
-console.log(teacher1.getName())
+let teacher1 = new Teacher("Deb Prentice", 21, "26 Nonya Lane", 1256)
+console.log(teacher1.getNewName())
 console.log(teacher1.getAge())
 console.log(teacher1.getAddress())
 console.log(teacher1.teacher_id)
 
 //Note:  name, age, address are private to Person, so must use a getter
+
+//Problem:  what if you want to define your own getName function in the child class?  You would call the function by a different name, then include the original getter name inside 
