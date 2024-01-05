@@ -24,28 +24,28 @@
 //         this.#name = name
 //         this.#dob = dob
 //     }
-//     getDob(){
+//     get getDob(){
 //         return this.#dob
 //     }
 
-//     getName(){
+//     get getName(){
 //         return this.#name
 //     }
 
-//     getAge(){
+//     get getAge(){
 //         return new Date().getFullYear() - this.#dob
 //     }
 // }
 
 // let student2 = new Student("deb", 1926)
 // console.log(student2)
-// console.log(student2.getName())
-// console.log(student2.getDob())
-// console.log(student2.getAge())
+// console.log(student2.getName)
+// console.log(student2.getDob)
+// console.log(student2.getAge)
 
-/**
- * ! Private Methods
-**/
+// /**
+//  * ! Private Methods
+// **/
 
 
 // class Student {
@@ -55,36 +55,36 @@
 //         this.#name = name
 //         this.#dob = dob
 //     }
-//     getDob(){
+//     get getDob(){
 //         return this.#dob
 //     }
 
-//     getName(){
+//     get getName(){
 //         return this.#name
 //     }
 
-//     getAge(){
+//     get getAge(){
 //         return new Date().getFullYear() - this.#dob
 //     }
 
 //     #getInfo(){
-//         return `${this.getName()} was born in the year ${this.getDob()} and is now ${this.getAge()} years old.`
+//         return `${this.getName} was born in the year ${this.getDob} and is now ${this.getAge} years old.`
 //     }
 
-//     getPrivateInfo(){
+//     get getPrivateInfo(){
 //         return this.#getInfo()
 //     }
 // }
 
 // const student3 = new Student("Pearline Molly Elizabeth Prentice", 1926)
-// console.log(student3.getDob())
-// console.log(student3.getName())
-// console.log(student3.getAge())
-// console.log(student3.getPrivateInfo())
+// console.log(student3.getDob)
+// console.log(student3.getName)
+// console.log(student3.getAge)
+// console.log(student3.getPrivateInfo)
 
-/**
- * ! Add some inheritance to the Encapsulation
-**/
+// /**
+//  * ! Add some inheritance to the Encapsulation
+// **/
 
 class Person {
     #name
@@ -95,16 +95,16 @@ class Person {
         this.#age = age 
         this.#address = address
     }
-    getName(){
+    get getName(){
         return this.#name
     }
-    getAge(){
+    get getAge(){
         return this.#age
     }
-    getAddress(){
+    get getAddress(){
         return this.#address
     }
-    
+   
 }
 
 class Teacher extends Person{
@@ -113,18 +113,31 @@ class Teacher extends Person{
         this.teacher_id = teacher_id
     }
     #getSalary(){
-        return "get salary"
+        return 15000
     }
-    getNewName(){
-        return `Welcome ${this.getName()}`
+    get getPrivateSalary(){
+        return this.#getSalary()
     }
+
+    get getNewName(){
+        return `Welcome ${this.getName}`
+    }
+    #getTeacherInfo(){
+        return `${this.getNewName} is now ${this.getAge} years old, and lives at ${this.getAddress}.`
+   }
+   get getTeacherInfo(){
+       return this.#getTeacherInfo()
+   }
+
 }
 
 let teacher1 = new Teacher("Deb Prentice", 21, "26 Nonya Lane", 1256)
-console.log(teacher1.getNewName())
-console.log(teacher1.getAge())
-console.log(teacher1.getAddress())
-console.log(teacher1.teacher_id)
+console.log("Name:", teacher1.getNewName)
+console.log("age:", teacher1.getAge)
+console.log("address:", teacher1.getAddress)
+console.log("salary:", teacher1.getPrivateSalary)
+console.log("info:", teacher1.getTeacherInfo)
+console.log("id:", teacher1.teacher_id)
 
 //Note:  name, age, address are private to Person, so must use a getter
 
